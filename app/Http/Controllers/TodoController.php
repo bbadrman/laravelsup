@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class TodoController extends Controller
@@ -15,7 +16,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
+        $data =DB::select('select * from todos');
+        return view('welcome',compact('data'));
     }
 
     /**
