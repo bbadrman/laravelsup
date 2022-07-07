@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,5 @@ Route::get('/badr/{name}/age/{id}', function ($name, $id) {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::post('/done',[TodoController::class, 'store']);

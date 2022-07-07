@@ -10,3 +10,4 @@ class TestController extends Controller
         echo "je suis danss la méthode contact";
     }
 }
+

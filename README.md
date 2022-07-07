@@ -65,6 +65,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## Controller  "php artisan make:controller Test"
+## controller with crud methode "hp artisan make:controller TodoController --resource"
 ## lancer le serveut  "php artisan serve"
 
 ## to create model "php artisan make:model Test"
