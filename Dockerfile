@@ -65,9 +65,9 @@ RUN a2enmod rewrite
 # Adding vhost
 COPY ./local/default.conf /etc/apache2/sites-available/000-default.conf
 
-# # Adding Symfony alias
-# RUN echo '#!/bin/bash\nphp /var/www/html/app/console "$@"' > /usr/bin/symfony && \
-#     chmod +x /usr/bin/symfony
+# Adding laravel alias
+# RUN echo '#!/bin/bash\nphp /var/www/html/app/console/Kernel.php "$@"' > /usr/bin/laravel && \
+#     chmod +x /usr/app/laravel
 
 ########## Setup priviliges
 RUN usermod -u 1000 www-data
@@ -77,6 +77,6 @@ RUN chown -R www-data:www-data $HOME/.composer/
 RUN chown -R www-data:www-data /var/www
 RUN chown -R www-data:www-data /usr/local/etc/php
 
-USER www-datadokc
+USER www-data
 WORKDIR /var/www/html
 VOLUME /var/www/html

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function new(){
-        echo"ok";
+    public function contact(){
+        echo "je suis danss la méthode contact";
     }
 }
