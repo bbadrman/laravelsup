@@ -3,7 +3,9 @@
 @section('content')
 <div class="container my-3">
     @if (session()->has('succes'))
-    <div class="alert alert-success alert-dismissible">To do Saved With Succes</div>
+    <div class="alert alert-success alert-dismissible">
+        {{session()->get('succes')}}
+    </div>
     @endif
     <form action="{{url('/done')}}" method="post">
      {{ csrf_field() }}
@@ -13,5 +15,27 @@
           </div>
 
     </form>
+
+    <table class="table">
+     <thead>
+        <tr>
+        <th>todo</th>
+        <th>option</th>
+    </tr>
+     </thead>
+     <tbody>
+        @foreach ($data as $item)
+        <tr>
+            <th>{{$item->body}}</th>
+            <th>
+                <a href="" class="btn btn-primary">show</a>
+                <a href="" class="btn btn-info">edit</a>
+                <a href="" class="btn btn-danger">delet</a>
+            </th>
+        </tr>
+        @endforeach
+
+     </tbody>
+    </table>
 </div>
 @endsection

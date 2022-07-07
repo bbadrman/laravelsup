@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/new', function () {
     return view('new');
 });
@@ -36,3 +36,4 @@ Route::get('/contact', function () {
 });
 
 Route::post('/done',[TodoController::class, 'store']);
+Route::get('/',[TodoController::class, 'index']);
