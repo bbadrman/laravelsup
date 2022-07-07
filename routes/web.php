@@ -29,5 +29,7 @@ Route::get('/badr/{name}/age/{id}', function ($name, $id) {
     echo 'bonjour ' . $name ." age de " . $id;
 })->where(['name' => '[A-Za-z]+', 'id' =>'[1-9]+']);
 
-Route::get('/contact', 'TestController@contact');
-
+// Route::get('/contact', 'TestController@contact');
+Route::get('/contact', function () {
+    return view('contact');
+});
