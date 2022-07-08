@@ -36,4 +36,7 @@ Route::get('/contact', function () {
 });
 
 Route::post('/done',[TodoController::class, 'store']);
+
 Route::get('/',[TodoController::class, 'index']);
+
+Route::delete('/del/{id}',[TodoController::class, 'destroy']);

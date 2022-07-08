@@ -87,6 +87,7 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from todos WHERE id_todo=?',[$id]);
+        return redirect('/');
     }
 }
