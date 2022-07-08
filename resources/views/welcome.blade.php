@@ -1,5 +1,14 @@
 @extends('layout.master')
-
+<style>
+    body {
+        background-image: url('ulistration/Cooked.webp');
+        /* background-image: url('ulistration/back5.webp'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+    
+</style>
 @section('content')
 <div class="container my-3">
     @if (session()->has('succes'))
@@ -28,9 +37,18 @@
         <tr>
             <th>{{$item->body}}</th>
             <th>
-                <a href="" class="btn btn-primary">show</a>
-                <a href="" class="btn btn-info">edit</a>
-                <a href="" class="btn btn-danger">delet</a>
+                <form action="{{url('/del/' . $item->id_todo)}}" method="post">
+
+                    {{method_field('DELETE')}}
+                    {{ csrf_field() }}
+                    <button class="btn btn-danger" type="submit">delete</button>
+                    <a href="" class="btn btn-primary">show</a>
+                    <a href="" class="btn btn-info">edit</a>
+                </form>
+                    
+              
+               
+               
             </th>
         </tr>
         @endforeach
