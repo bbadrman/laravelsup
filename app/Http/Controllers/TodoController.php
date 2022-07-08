@@ -64,7 +64,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+       $datafor=DB::select('select * from todos WHERE id_todo=?',[$id]);
+        return view('edite', compact('datafor'));
     }
 
     /**
@@ -76,7 +77,9 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $v=$request->input('uptodo');
+        DB::update('update todos set body=? where id_todo=?',[ $v,$id]);
+        return redirect('/');
     }
 
     /**

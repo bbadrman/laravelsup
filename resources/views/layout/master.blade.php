@@ -11,6 +11,7 @@
     <title>To Do App</title>
 </head>
 <body>
+    
     @include('navs.navbar')
     @yield('content')
     
